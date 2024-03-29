@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container__about">
+  <div class="wrapper__about">
+      <div class="about__photo">
+        <img src="{{prod.photo_url}}" alt="">
+      </div>
+      <div class="events__info">
+        <p class="name__about">{{prod.name}}</p>
+        <p class="description__about">Уютная квартира в аренду на сайте – ваш идеальный выбор для комфортного проживания!
+          Если вы ищете уютное и комфортабельное жилье для временного или постоянного проживания, 
+          то наша квартира на сайте - идеальный вариант для вас!
+          Мы предлагаем просторные апартаменты с современным ремонтом, 
+          оборудованные всей необходимой мебелью и техникой для вашего комфорта. 
+          Квартира находится в удобном районе города, рядом с транспортной развязкой и магазинами.</p>
+        <button class="call">Позвонить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="text__comment">Оставьте коментарии об аренде</p>
+
+<div class="comment">
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button__comments" type="submit">отправить</button>
+  </form>
+</div>
+
+<h1 class="last__comments">Последние коментарии</h1>
+
+{% if comment %}
+  {% for e in comment %}
+    <div class="container__all__comments">
+      <p class="created__comment">{{ e.created }}</p>
+      <p class="name__comment">{{ e.name }}</p>
+      <p class="body__comment">{{ e.body }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+<p>ничего Нет</p>
+{% endif %}
+{% endblock %}

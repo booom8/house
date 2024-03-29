@@ -1,0 +1,27 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block content %}
+    <div class="background-element">
+      <div class="wrapper">
+        <div class="background-element__item">
+          <h1> История фирмы “Мой любимый дом”</h1>
+          <p>В самом сердце города, там, где старая архитектура переплетается с современностью, родилась идея создания уникальной компании по аренде недвижимости — "Мой Любимый Дом". Владимир, предприниматель и любитель необычных решений, стал инициатором этого проекта. У него всегда была страсть к созданию пространств, которые могут рассказывать свою уникальную историю. <br> <br> История началась с того, что Владимир приобрел старинное здание, которое уже давно теряло свое величие под слоем времени. Вместе со своим дружным коллективом — Софией, опытным архитектором, Антоном, разработчиком уникальных интерьерных решений, и Ольгой, специалистом по клиентскому обслуживанию — они решили превратить это забытое здание в живое пространство, полное истории и уюта.</p><svg xmlns="http://www.w3.org/2000/svg" width="5" height="361" viewBox="0 0 5 361" fill="none">
+<path d="M2.5 3L2.5 358" stroke="#624C4C" stroke-width="5" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <h1 class="section-name">Услуги</h1>
+      <div class="services-block">
+        <div class="services-block__item"><img src="{% static 'img/img_rent.png' %}" alt="">
+          <button>Аренда</button>
+        </div>
+        <div class="services-block__item"><img src="{% static 'img/img_purchase.png' %}" alt="">
+          <button>Покупка</button>
+        </div>
+      </div>
+      <h1 class="section-name">Схема проезда до офиса</h1><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A94ad2b6e19f64262f09a7561bdc227e402eee4a306da8a4a1a6cdf18878f0c31&amp;source=constructor" width="965" height="467" frameborder="0"></iframe>
+    </div>
+    <script src="./js/menu.js"></script>
+{% endblock %}

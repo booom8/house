@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="events">
+    <div class="events__wrapper">
+      <div class="events__photo">
+        <img src="{{note.photo_url}}" alt="">
+      </div>
+      <div class="events__info">
+        <p class="events__data">{{note.date}}</p>
+        <p class="events__title">{{note.name}}</p>
+        <p class="events__comm">Комментарии</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="add__comment">
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">отправить</button>
+  </form>
+</div>
+
+
+{% if comment %}
+  {% for e in comment %}
+    <div>
+      <p>{{ e.created }}</p>
+      <p>{{ e.name }}</p>
+      <p>{{ e.body }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+<p>ничего Нет</p>
+{% endif %}
+{% endblock %}

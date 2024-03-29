@@ -1,0 +1,33 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block content %}
+<div class="wrapper">
+    <h1 class="section-name">Новости и акции</h1>
+    <div class="news-blocks">
+      <div class="news-block"><img src="{% static 'img/bg_sales.png' %}" alt="">
+        <div class="news-block-items">
+          <p>Скидки на квартиры с отделкой</p>
+          <button>Узнать подробнее</button>
+        </div>
+      </div>
+      <div class="news-block"><img src="{% static 'img/bg_sales-2.png' %}" alt="">
+        <div class="news-block-items">
+          <p>Скидки на квартиры с отделкой</p>
+          <button>Узнать подробнее</button>
+        </div>
+      </div>
+      <div class="news-block"><img src="{% static 'img/bg_sales.png' %}" alt="">
+        <div class="news-block-items">
+          <p>Скидки на квартиры с отделкой</p>
+          <button>Узнать подробнее</button>
+        </div>
+      </div>
+    </div>
+    <h1 class="section-name">Партнеры</h1>
+    <div class="partners-blocks">
+      <div class="partners-block"><img src="{% static 'img/img_partner.png' %}" alt=""></div>
+      <div class="partners-block"><img src="{% static 'img/img_partner.png' %}" alt=""></div>
+      <div class="partners-block"><img src="{% static 'img/img_partner.png' %}" alt=""></div>
+    </div>
+  </div>
+{% endblock %}

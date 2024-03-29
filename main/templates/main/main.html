@@ -1,0 +1,36 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block content %}
+<div class="wrapper" id="products">
+
+  <div class="filters">
+    <p>Поиск</p>
+    <input class="search" placeholder="Search">
+    <span class="sort" data-sort="dsdsd">Сортировать по имени</span>
+  </div>
+  
+  <div class="rent-blocks list">
+    {% for el in prods %}
+    <h1 class="section-name">{{el.name}}</h1>
+    <div class="rent-block"><img src="{{ el.photo_url }}" alt="">
+      <div class="rent-block__text">
+        <p class="dsdsd">{{el.description}}</p>
+        <div class="rent-block__btn">
+          <button>от 45 000р.</button>
+          <button><a href="{% url 'post_detail' el.id %}">Подробнее</a></button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+<script src="{% static 'js/list.min.js' %}"></script>
+<script>
+  var options = {
+    valueNames: [ 'dsdsd', ]
+  };
+  
+  var userList = new List('products', options);
+</script>
+  {% endblock %}

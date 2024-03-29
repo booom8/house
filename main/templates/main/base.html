@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+    
+      </form>
+        <div class="header">
+          <div class="header__banner"><img src="{% static 'img/bg_banner.png' %}" alt=""/>
+            <div class="header__banner-text"><img class="logo-index" src="{% static './img/logo.png' %}" alt=""/>
+              <p>Приветствуем вас на нашем сайте, посвященном продаже и аренде недвижимости. Мы рады предложить вам широкий спектр объектов для покупки и аренды, чтобы вы могли воплотить свою мечту о собственном доме или обеспечить себе стабильный доход от инвестиций в недвижимость.</p>
+            </div>
+          </div>
+          <div class="header__menu">
+            <ul>
+              <li><a href="{% url 'home' %}">
+                <p>Главная</p></a></li>
+              <li><a href="{% url 'index' %}">
+                <p>Недвижимость</p></a></li>
+              <li><a href="{% url 'news' %}">
+                <p>Новости</p></a></li>
+                {% if user.is_authenticated %}
+                  <li> <a href="{% url 'account_logout' %}"><p>Выход</p></a></li>
+                {% else %}
+                  <li> <a href="{% url 'account_login' %}"><p>Вход</p></a></li>
+                  <li> <a href="{% url 'account_signup' %}"><p>Регистрация</p></a></li>
+                {% endif %}
+            </ul>
+          </div>
+          <div class="header__burger-menu"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" class="header__burger-menu__btn" onclick="addMenuBurg()">
+      <rect width="30" height="24" rx="5" fill="#624C4C"/>
+      <path d="M9 7H22" stroke="#FFFAFA" stroke-width="2" stroke-linecap="round"/>
+      <path d="M9 12H22" stroke="#FFFAFA" stroke-width="2" stroke-linecap="round"/>
+      <path d="M9 17H22" stroke="#FFFAFA" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+          </div>
+        </div>
+    </header>
+    {% block menu %}{% endblock %}
+    {% block content %}{% endblock %}
+
+<footer>
+    <div class="footer">
+          <div class="footer-menu">
+            <div class="footer-menu__item">
+              <h1>Телефон</h1>
+              <p>+7 123 456 78 90</p>
+            </div>
+            <div class="footer-menu__item">
+              <h1>ФИО менеджера</h1>
+              <p>Иванов.И.И</p>
+            </div>
+            <div class="footer-menu__item">
+              <h1>Почта</h1>
+              <p>123456@gmail.com</p>
+            </div>
+            <div class="footer-menu__item">
+              <h1>Адрес</h1>
+              <p>Москва, ул.Ленина, д1</p>
+            </div>
+          </div>
+    </div>
+</footer>
+      <script src="./js/menu.js"></script>
+</body>
+</html>
